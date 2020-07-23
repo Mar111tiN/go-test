@@ -15,7 +15,7 @@ RUN go mod verify
 
 # build the binary
 #  GOBIN is already set to /go/bin
-RUN GOOS=linux GOARCH=amd64 go build -o /go/bin/go-test
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /go/bin/go-test
 
 FROM scratch 
 
